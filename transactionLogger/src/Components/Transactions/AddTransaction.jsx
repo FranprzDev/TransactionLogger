@@ -3,24 +3,32 @@ import { Button, Form, Input, DatePicker, Select, Radio } from "antd";
 import { categories } from "../../js/constants";
 import { addTransaction } from "../../slice/transactionSlice";
 import { useDispatch } from "react-redux";
+import Swal from 'sweetalert2'
 
 function AddTransaction({ buttonText = "Add Transaction", fields = {} }) {
   const [form] = Form.useForm();
   const dispatch = useDispatch();
 
   const onFinish = (values) => {
-    console.log(values.date.format("YYYY-MM-DD"))
 
     const transaction = {
+      id: Math.floor(Math.random() * 1000),
       description: values.description,
       amount: values.amount,
       type: values.type == 1 ? "+" : "-",
       category: values.category,
       date: values.date.format("YYYY-MM-DD"),
     };
-  
+    
     dispatch(addTransaction(transaction));
 
+    Swal.fire({
+      position: "center",
+      icon: "success",
+      title: "Your transaction has been added!",
+      showConfirmButton: false,
+      timer: 1500
+    });
     form.resetFields();
   };
 

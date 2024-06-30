@@ -11,10 +11,26 @@ section {
     }
 }
 
-.positive {
-    color: rgb(10, 163, 10);
+.text-edit {
+    color: rgb(32, 19, 207);
+    cursor: pointer;
+}
+.text-delete {
+    color: rgb(209, 14, 112);
+    cursor: pointer;
 }
 
-.negative {
-    color: rgb(163, 10, 10);
+.modal-div {
+    position: relative;
+    top: 10px;
+}
+
+.select-category-modal {
+    width: 150px; position: relative; top: 15px;
+}
+
+.sectioninputs {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
 }

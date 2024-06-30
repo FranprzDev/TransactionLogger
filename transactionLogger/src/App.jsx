@@ -92,9 +92,9 @@ const App = () => {
       case "3":
         return <Profile />;
       case "4":
-        return <AddTransaction />;
+        return <AddTransaction/>;
       case "5":
-        return <AllTransaction />;
+        return <AllTransaction renderContent={renderContent}/>;
       case "6":
         return <Charts />;
       default:
